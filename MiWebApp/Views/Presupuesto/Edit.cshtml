@@ -1,0 +1,22 @@
+@model Presupuestos
+
+<section>
+    <h3>EDITAR PRESUPUESTO</h3>
+</section>
+
+<form asp-controller="Presupuesto" asp-action="Edit" method="post">
+    <input asp-for="IdPresupuesto" type="hidden" />
+
+    <div class="mb-3">
+        <label asp-for="NombreDestinatario" class="form-label"></label>
+        <input asp-for="NombreDestinatario" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FechaCreacion" class="form-label"></label>
+        <input asp-for="FechaCreacion" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Guardar cambios</button>
+    <a asp-controller="Presupuesto" asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+</form>

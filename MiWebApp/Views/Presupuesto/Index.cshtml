@@ -1,0 +1,44 @@
+@model List<Presupuestos>
+@{
+    ViewData["Title"] = "Lista de Presupuestos";
+}
+
+<section>
+    <h2>LISTA DE PRESUPUESTOS</h2>
+
+    <a asp-controller="Presupuesto" asp-action="Create" class="btn btn-success mb-3">➕ Crear Presupuesto</a>
+
+    <table class="table table-bordered table-hover">
+        <caption>LISTA DE PRESUPUESTOS</caption>
+        <thead class="table-dark">
+            <tr>
+                <th>ID Presupuesto</th>
+                <th>Nombre Destinatario</th>
+                <th>Fecha Creación</th>
+                <th>Monto sin IVA</th>
+                <th>Monto con IVA</th>
+                <th>Cantidad Total de Productos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var presu in Model)
+            {
+                <tr>
+                    <td>@presu.IdPresupuesto</td>
+                    <td>@presu.NombreDestinatario</td>
+                    <td>@presu.FechaCreacion.ToShortDateString()</td>
+                    <td>@presu.montoPresupuesto()</td>
+                    <td>@presu.montoPresupuestoConIva()</td>
+                    <td>@presu.CantidadProductos()</td>
+                    <td>
+                        <a asp-controller="Presupuesto" asp-action="Details" asp-route-id="@presu.IdPresupuesto" class="btn btn-info btn-sm">Detalles</a>
+                        <a asp-controller="Presupuesto" asp-action="Edit" asp-route-id="@presu.IdPresupuesto" class="btn btn-warning btn-sm">Editar</a>
+                        <a asp-controller="Presupuesto" asp-action="Delete" asp-route-id="@presu.IdPresupuesto" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a asp-controller="Presupuesto" asp-action="AgregarProducto" asp-route-id="@presu.IdPresupuesto" class="btn btn-primary btn-sm">Agregar Producto</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

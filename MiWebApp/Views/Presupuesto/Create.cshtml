@@ -1,0 +1,22 @@
+@model Presupuestos
+
+<section>
+    <h3>CREAR PRESUPUESTO</h3>
+</section>
+
+<form asp-controller="Presupuesto" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="NombreDestinatario" class="form-label"></label>
+        <input asp-for="NombreDestinatario" class="form-control" required />
+        <span asp-validation-for="NombreDestinatario" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FechaCreacion" class="form-label"></label>
+        <input asp-for="FechaCreacion" type="date" class="form-control" required />
+        <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">➕ Crear</button>
+    <a asp-controller="Presupuesto" asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+</form>

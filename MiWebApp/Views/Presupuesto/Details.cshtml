@@ -1,0 +1,66 @@
+@model Presupuestos
+
+<section>
+    <h3>DETALLES DEL PRESUPUESTO</h3>
+</section>
+
+@if (Model != null)
+{
+    <dl class="row">
+        <dt class="col-sm-3">ID Presupuesto</dt>
+        <dd class="col-sm-9">@Model.IdPresupuesto</dd>
+
+        <dt class="col-sm-3">Nombre Destinatario</dt>
+        <dd class="col-sm-9">@Model.NombreDestinatario</dd>
+
+        <dt class="col-sm-3">Fecha de Creación</dt>
+        <dd class="col-sm-9">@Model.FechaCreacion.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Monto sin IVA</dt>
+        <dd class="col-sm-9">@Model.montoPresupuesto()</dd>
+
+        <dt class="col-sm-3">Monto con IVA</dt>
+        <dd class="col-sm-9">@Model.montoPresupuestoConIva()</dd>
+
+        <dt class="col-sm-3">Cantidad de Productos</dt>
+        <dd class="col-sm-9">@Model.CantidadProductos()</dd>
+    </dl>
+
+    <h4>Productos</h4>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Cantidad</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detalle in Model.Detalle)
+            {
+                <tr>
+                    <td>@detalle.Cantidad</td>
+                    <td>@detalle.Producto.Descripcion</td>
+                    <td>@detalle.Producto.Precio</td>
+                    <td>@(detalle.Cantidad * detalle.Producto.Precio)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="Presupuesto" asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+    <a asp-controller="Presupuesto" asp-action="Edit" asp-route-id="@Model.IdPresupuesto" class="btn btn-warning">Editar</a>
+    <a asp-controller="Presupuesto" asp-action="Delete" asp-route-id="@Model.IdPresupuesto" class="btn btn-danger">Eliminar</a>
+}
+else
+{
+    <p>No se encontró el presupuesto solicitado.</p>
+}
+<!--- el name del input debe llamarle igual que el paramatro del metodo?
+
+
+Exactamente, sí — el name del <input> en el formulario debe llamarse igual que el nombre del parámetro del
+ método del controlador (o que la propiedad del modelo si usás un objeto).
+Esa es la base del model binding en ASP.NET MVC.
+--->

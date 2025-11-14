@@ -1,0 +1,21 @@
+@model Presupuestos
+
+<section>
+    <h3>ELIMINAR PRESUPUESTO</h3>
+    <p>¿Estás seguro de que deseas eliminar este presupuesto?</p>
+</section>
+
+<form asp-controller="Presupuesto" asp-action="DeleteConfirmed" method="post">
+    <input asp-for="IdPresupuesto" type="hidden" />
+
+    <dl class="row">
+        <dt class="col-sm-3">Nombre Destinatario</dt>
+        <dd class="col-sm-9">@Model.NombreDestinatario</dd>
+
+        <dt class="col-sm-3">Fecha de Creación</dt>
+        <dd class="col-sm-9">@Model.FechaCreacion.ToShortDateString()</dd>
+    </dl>
+
+    <button type="submit" class="btn btn-danger">🗑 Eliminar</button>
+    <a asp-controller="Presupuesto" asp-action="Index" class="btn btn-secondary">⬅ Cancelar</a>
+</form>

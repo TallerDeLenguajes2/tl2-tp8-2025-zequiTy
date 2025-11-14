@@ -1,0 +1,31 @@
+
+@model SistemaVentas.Web.ViewModels.ProductoViewModel
+
+@{
+    ViewData["Title"] = "Crea Producto";
+}
+<section>
+    <h3>CREAR PRODUCTO</h3>
+</section>
+
+<form asp-controller="Productos" asp-action="Create" method="post">
+    <!-- Campo oculto para enviar el ID -->
+    <!--<input asp-for="iDproducto" type="hidden" />-->
+
+    <div class="mb-3">
+        <label asp-for="Descripcion" class="form-label"></label>
+        <input asp-for="Descripcion" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Precio" class="form-label"></label>
+        <input asp-for="Precio" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Guardar cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+</form>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

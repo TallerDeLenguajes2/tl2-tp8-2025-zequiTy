@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f575a37ac3130fcda2694e1fdfad5f99a4b77fc4")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

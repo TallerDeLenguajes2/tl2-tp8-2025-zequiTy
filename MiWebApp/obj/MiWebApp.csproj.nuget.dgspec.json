@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Universidad\\taller25\\taller2\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj": {}
+    "C:\\Universidad\\Taller\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Universidad\\taller25\\taller2\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj": {
+    "C:\\Universidad\\Taller\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Universidad\\taller25\\taller2\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj",
+        "projectUniqueName": "C:\\Universidad\\Taller\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj",
         "projectName": "MiWebApp",
-        "projectPath": "C:\\Universidad\\taller25\\taller2\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj",
-        "packagesPath": "C:\\Users\\exeb1\\.nuget\\packages\\",
-        "outputPath": "C:\\Universidad\\taller25\\taller2\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\obj\\",
+        "projectPath": "C:\\Universidad\\Taller\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\MiWebApp.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Universidad\\Taller\\TP08\\tl2-tp8-2025-zequiTy\\MiWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\exeb1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

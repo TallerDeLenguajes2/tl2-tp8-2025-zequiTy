@@ -1,20 +1,47 @@
+@model List<Productos>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Lista de Productos";
 }
 
-@model List<Productos>
+<section>
+    <h2>LISTA DE PRODUCTOS</h2>
 
-<div class="text-center">
-    <h1 class="display-4">Productos</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- Botón para crear un nuevo producto -->
+    <a asp-action="Create" class="btn btn-success mb-3">➕ Crear Producto</a>
 
- 
-<ul>
- @foreach (var producto in Model)
- {
- <li>@producto.IdProducto</li>
- <li>@producto.Descripcion</li>
- <li>@producto.Precio</li>
- }
- </ul
+    <table class="table table-bordered table-hover">
+        <caption>LISTA DE PRODUCTOS</caption>
+        <thead class="table-dark">
+            <tr>
+                <th>ID Producto</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.IdProducto</td>
+                    <td>@producto.Descripcion</td>
+                    <td>@producto.Precio</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@producto.IdProducto" class="btn btn-warning btn-sm">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@producto.IdProducto" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a asp-action="Details" asp-route-id="@producto.IdProducto" class="btn btn-info btn-sm">Detalles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<style>
+  table caption {
+    caption-side: top;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+</style>
